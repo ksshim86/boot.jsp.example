@@ -4,12 +4,8 @@
 <mapper namespace="com.boot.example.mapper.SpringBootJspMapper">
     <select id="selectTest" resultType="String">
         SELECT
-        	LCODE AS name
+        	'TESTTEXT' AS name
         FROM
-        	HEALTH_CHECK_CODE
-        WHERE
-        	LCODE = 'YEAR'
-        AND
-        	GRP_YEAR = '2018'
+        	DUAL
     </select>
 </mapper>

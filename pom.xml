@@ -6,7 +6,6 @@
 	<groupId>com.example</groupId>
 	<artifactId>boot.jsp.example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
 	<name>boot.jsp.example</name>
 	<description>Boot.jsp project for Spring Boot</description>
@@ -21,7 +20,10 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<start-class>com.boot.example.Application</start-class>
 		<java.version>1.8</java.version>
+		<main.basedir>${basedir}/../..</main.basedir>
+        <m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
 	</properties>
 
 	<dependencies>
@@ -43,9 +45,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -79,20 +79,19 @@
      		<systemPath>${basedir}/src/main/resources/ojdbc6.jar</systemPath>
    		</dependency>
 	</dependencies>
-
+	
+	<!-- 실행가능 Jar를 만들기 위해서 -->
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-<!-- 				<configuration> -->
-<!-- 					<excludes> -->
-<!-- 					    <exclude>*.properties</exclude> -->
-<!-- 					    <exclude>*.xml</exclude> -->
-<!-- 					</excludes> -->
-<!-- 				</configuration> -->
+			<configuration>
+				<includeSystemScope>true</includeSystemScope>
+			</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
+	<packaging>war</packaging>
 </project>

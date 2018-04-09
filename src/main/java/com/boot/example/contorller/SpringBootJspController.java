@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.boot.example.mapper.SpringBootJspMapper;
 
 @Controller
-@RequestMapping("/example")
+@RequestMapping("/")
 public class SpringBootJspController {
 	
 	@Autowired
